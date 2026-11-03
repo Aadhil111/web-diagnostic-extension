@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Web Diagnostic</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="extension">
+  <main class="app">
+    <header class="header">
+      <h1>Web Diagnostic</h1>
+    </header>
+
+    <form id="diagnose-form" class="form" novalidate>
+      <label for="url-input" class="sr-only">Website URL</label>
+      <input id="url-input" type="text" placeholder="example.com or https://example.com"
+             autocomplete="off" autocapitalize="off" spellcheck="false">
+      <button id="diagnose-button" type="submit">DIAGNOSE</button>
+    </form>
+
+    <div id="loading" class="loading" hidden>
+      <span class="spinner"></span>
+      <span>Running diagnostics… this can take up to 30 seconds.</span>
+    </div>
+
+    <div id="error" class="error" role="alert" hidden></div>
+
+    <div id="results" class="results" hidden></div>
+
+    <div id="copy-bar" class="copy-bar" hidden>
+      <button id="copy-button" type="button" class="copy-button">Copy Report (JSON)</button>
+    </div>
+
+    <footer class="footer">Checks run from <span id="api-label"></span></footer>
+  </main>
+
+  <script src="platform.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
